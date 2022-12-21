@@ -1,0 +1,12 @@
+<p>add-todo works  as!</p>
+
+<form #myForm="ngForm" (ngSubmit)="SubmitData(myForm)">
+    Title : <input type="text"  #title="ngModel"   ngModel name="title" required/>
+ 
+    <span *ngIf="title.invalid && title.touched" style="color:red;">Enter Name</span>
+    <br/>
+    Details : <input type="text" name="details" #details="ngModel" minlength="3"  ngModel required/>
+    <span *ngIf="details.invalid && details.touched" style="color:red;">Enter Details with Minimum 3 Charcters</span>
+    <br/>
+    <input type="button" [disabled]="myForm.invalid" value="Click Me" /> 
+</form>
